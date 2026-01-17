@@ -202,7 +202,6 @@
 
 <!-- HEADER: MENU + HEROE SECTION -->
 <header>
-
     <div class="menu">
         <ul>            
             <li class="menu-toggle">
@@ -215,5 +214,18 @@
 
     <div class="heroe">
         <h1>Bienvenidos a la Tienda de tenis</h1>
+        <div class="menu">
+            <ul>
+                <?php if (!empty($categorias)): ?>
+                    <?php foreach ($categorias as $categoria): ?>
+                        <li class="menu-item hidden">
+                            <a href="<?= base_url('tienda/products/category/' . $categoria['indice_cat']) ?>">
+                                <?= esc($categoria['nombre_cat']) ?>
+                            </a>
+                        </li>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </ul>
+        </div>
     </div> 
 </header>    

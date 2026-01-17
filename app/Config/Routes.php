@@ -9,4 +9,5 @@ use App\Controllers\Products;
  */
 $routes->get('/', [Home::class, 'index']);
 $routes->get('tienda/products/all', [Products::class, 'showAll']);
+$routes->get('tienda/products/category/(:segment)', [Products::class, 'showAll']);
 $routes->get('tienda/products/(:segment)', [Products::class, 'showProduct']);
