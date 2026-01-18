@@ -1,19 +1,31 @@
 <section>
     <h2><?= esc($title) ?></h2>
 
-    <?= session()->getFlashdata('error') ?>
-    <?= validation_list_errors() ?>
-    <br><br><br>
+    <?php if (session()->getFlashdata('error')): ?>
+        <?= session()->getFlashdata('error') ?>
+    <?php endif ?>
 
-    <h1><?= esc($error) ?></h1>
+    <?php if (isset($validation) && $validation->hasError()): ?>
+        <?= $validation->listErrors() ?>
+    <?php endif ?>
+
+    <?php if (!empty($error)): ?>
+        <?= esc($error) ?>
+    <?php endif ?>
+
     <form method="post" action="<?= base_url('login') ?>">
         <?= csrf_field() ?>
+
         <label for="email">Email</label>
-        <input type="email" name="email" value="<?= set_value('email') ?>">
+        <input type="email" id="email" name="email" value="<?= set_value('email') ?>" required>
+
         <br>
+
         <label for="password">Password</label>
-        <input type="input" name="password" value="<?= set_value('password') ?>">
+        <input type="password" id="password" name="password" value="<?= set_value('password') ?>" required>
+
         <br>
-        <input type="submit" name="submit" value="Enviar">
+
+        <button type="submit" name="submit">Enviar</button>
     </form>
 </section>

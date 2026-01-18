@@ -205,35 +205,11 @@
         <ul>            
             <li class="menu-toggle">
                 <button id="menuToggle">&#9776;</button>
-            </li>            
-            <?php $session = session();
-            if (!empty($session->get('user'))): ?>
-                <span>
-                    <?= "Bienvenid@ " . esc($session->get('user')) ?>
-                </span>
-                <li class="menu-item hidden"><a href="<?= base_url('session') ?>">Cerrar sesión</a></li>
-            <?php else: ?>
-                <li class="menu-item hidden"><a href="<?= base_url('/') ?>">Inicio</a></li>
-                <li class="menu-item hidden"><a href="<?= base_url('tienda/products/all') ?>">Productos</a></li>
-                <li class="menu-item hidden"><a href="<?= base_url('admin') ?>">Iniciar sesión</a></li>
-            <?php endif ?>
+            </li>
+            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Productos</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Añadir Productos</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Categorías</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Añadir Categorías</a></li>            
         </ul>
     </div>
-
-    <div class="heroe">
-        <h1>Bienvenidos a la Tienda de tenis</h1>
-        <div class="menu">
-            <ul>
-                <?php if (!empty($categorias)): ?>
-                    <?php foreach ($categorias as $categoria): ?>
-                        <li class="menu-item hidden">
-                            <a href="<?= base_url('tienda/products/category/' . $categoria['indice_cat']) ?>">
-                                <?= esc($categoria['nombre_cat']) ?>
-                            </a>
-                        </li>
-                    <?php endforeach ?>
-                <?php endif ?>
-            </ul>
-        </div>
-    </div> 
 </header>    

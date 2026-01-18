@@ -22,16 +22,14 @@ class Users extends BaseController {
 
     public function checkUser() {
         helper('form');
-        //IF de validación
+
         if (! $this->validate([
             'email' => 'required|max_length[255]|min_length[4]|valid_email',
             'password' => 'required|max_length[5000]|min_length[4]'
         ])) {
-            //Si la validación falla, volvemos al formulario
             return $this->loginForm();
         }
 
-        //Obtenemos los datos validados
         $post = $this->validator->getValidated();
 
         $model = model(UserModel::class);
@@ -39,14 +37,11 @@ class Users extends BaseController {
         $model_cat = model(CategoriesModel::class);
         $data['categorias'] = $model_cat->findAll();
 
-        //Comprobamos si existe el usuario y contraseña en la BBDD
         if ($data['user'] = $model->checkUser($post['email'], $post['password'])) {
             $session = session();
             $session->set('user', $post['email']);
 
-            return view('frontend/templates/header', $data)
-                . view('backend/users/admin')
-                . view('frontend/templates/footer');
+            return redirect()->to(base_url('backend'));
         } else {
             return $this->loginForm("Error");
         }
@@ -55,10 +50,8 @@ class Users extends BaseController {
     public function closeSession() {
         $session = session();
 
-        //Eliminar la variable de sesión específica
         $session->remove('user');
 
-        //Eliminar toda la información d ela sesión
         $session->destroy();
 
         return redirect()->to(base_url('admin'));
