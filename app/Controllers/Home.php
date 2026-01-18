@@ -11,8 +11,8 @@ class Home extends BaseController {
             'ultimos' => $model->getProductosUltimos()
         ];
 
-        return view('templates/header', $data)
-            . view('tienda/index')
-            . view('templates/footer');
+        return view('frontend/templates/header', $data)
+            . view('frontend/tienda/index')
+            . view('frontend/templates/footer');
     }
 }

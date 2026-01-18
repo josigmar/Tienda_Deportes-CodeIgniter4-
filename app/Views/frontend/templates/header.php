@@ -209,6 +209,11 @@
             </li>
             <li class="menu-item hidden"><a href="<?= base_url('/') ?>">Inicio</a></li>
             <li class="menu-item hidden"><a href="<?= base_url('tienda/products/all') ?>">Productos</a></li>
+            <li class="menu-item hidden"><a href="<?= base_url('admin') ?>">Iniciar sesión</a></li>
+            <?php $session = session();
+            if (!empty($session->get('user'))): ?>
+                <li class="menu-item hidden"><a href="<?= base_url('session') ?>">Cerrar sesión</a></li>
+            <?php endif ?>
         </ul>
     </div>
 

@@ -19,9 +19,9 @@ class Products extends BaseController {
         $model_cat = model(CategoriesModel::class);
         $data['categorias'] = $model_cat->findAll();
 
-        return view('templates/header', $data)
-            . view('tienda/productsAll')
-            . view('templates/footer');
+        return view('frontend/templates/header', $data)
+            . view('frontend/tienda/productsAll')
+            . view('frontend/templates/footer');
     }
 
     public function showProduct($Cod_producto = null) {
@@ -36,8 +36,8 @@ class Products extends BaseController {
         $model_cat = model(CategoriesModel::class);
         $data['categorias'] = $model_cat->findAll();
 
-        return view('templates/header', $data)
-            . view('tienda/product')
-            . view('templates/footer');
+        return view('frontend/templates/header', $data)
+            . view('frontend/tienda/product')
+            . view('frontend/templates/footer');
     }
 }
