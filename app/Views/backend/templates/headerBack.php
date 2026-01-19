@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to CodeIgniter 4!</title>
+    <title>Tienda de tenis</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
@@ -199,17 +199,19 @@
     </style>
 </head>
 <body>
-
+<!-- FALTA hacer el CRUD de las categorías -->
 <header>
     <div class="menu">
         <ul>            
             <li class="menu-toggle">
                 <button id="menuToggle">&#9776;</button>
             </li>
+            <li class="menu-item hidden"><a href="<?= base_url('/') ?>">Mostrar Página</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Productos</a></li>            
-            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Añadir Productos</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend/tienda/new') ?>">Añadir Productos</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Categorías</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Añadir Categorías</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('session') ?>">Cerrar Sesión</a></li>            
         </ul>
     </div>
 </header>    

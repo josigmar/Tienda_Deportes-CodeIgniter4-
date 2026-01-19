@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to CodeIgniter 4!</title>
+    <title>Tienda de tenis</title>
     <meta name="description" content="The small framework with powerful features">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico">
@@ -211,6 +211,7 @@
                 <span>
                     <?= "Bienvenid@ " . esc($session->get('user')) ?>
                 </span>
+                <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Admin panel</a></li>
                 <li class="menu-item hidden"><a href="<?= base_url('session') ?>">Cerrar sesión</a></li>
             <?php else: ?>
                 <li class="menu-item hidden"><a href="<?= base_url('/') ?>">Inicio</a></li>

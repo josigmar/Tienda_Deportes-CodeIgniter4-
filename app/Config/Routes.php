@@ -24,5 +24,14 @@ $routes->get('session', [Users::class, 'closeSession']);
 
 $routes->group('backend', function($routes) {
     $routes->get('', [ProductsBackend::class, 'showAll']);
+
+    $routes->get('tienda/new', [ProductsBackend::class, 'new']);
+    $routes->post('tienda/create', [ProductsBackend::class, 'create']);
+
+    $routes->get('tienda/update/(:num)', [ProductsBackend::class, 'update']);
+    $routes->post('tienda/updatedItem/(:num)', [ProductsBackend::class, 'updatedItem']);
+
+    $routes->get('tienda/del/(:num)', [ProductsBackend::class, 'delete']);
+
     $routes->get('tienda/products/(:segment)', [ProductsBackend::class, 'showProduct']);
 });
