@@ -1,4 +1,3 @@
-<!-- Crear un botón examinar que permita subir una imagen al crear o editar un producto -->
 <section>
     <h2><?= esc($title) ?></h2> 
 
@@ -45,7 +44,7 @@
         </select> 
         
         <br><br> 
-        <!-- Aquí sería ideal que fuese un select que sólo mostrase los códigos disponibles de la categoría seleccionada -->
+        
         <label for="Cod_producto">Código de producto</label> 
         <input type="input" name="Cod_producto" value="<?= set_value('Cod_producto') ?>"> 
         

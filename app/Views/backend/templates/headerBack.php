@@ -199,7 +199,7 @@
     </style>
 </head>
 <body>
-<!-- FALTA hacer el CRUD de las categorías -->
+
 <header>
     <div class="menu">
         <ul>            
@@ -209,8 +209,8 @@
             <li class="menu-item hidden"><a href="<?= base_url('/') ?>">Mostrar Página</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Productos</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('backend/tienda/new') ?>">Añadir Productos</a></li>            
-            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Categorías</a></li>            
-            <li class="menu-item hidden"><a href="<?= base_url('backend') ?>">Añadir Categorías</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend/categorias') ?>">Categorías</a></li>            
+            <li class="menu-item hidden"><a href="<?= base_url('backend/categorias/new') ?>">Añadir Categorías</a></li>            
             <li class="menu-item hidden"><a href="<?= base_url('session') ?>">Cerrar Sesión</a></li>            
         </ul>
     </div>

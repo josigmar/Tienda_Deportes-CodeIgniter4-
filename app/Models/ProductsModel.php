@@ -5,6 +5,7 @@ use CodeIgniter\Model;
 class ProductsModel extends Model {
     protected $table = 'Productos';
     protected $primaryKey = 'Cod_producto';
+    protected $useAutoIncrement = false;
     protected $allowedFields = ['Cod_producto', 'Categoria', 'Modelo', 'Marca', 'Peso', 'Precio', 'Stock', 'imagen'];
     /**
      * @param false | string $slug
